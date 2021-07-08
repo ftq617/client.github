@@ -16,7 +16,7 @@
                var pair = vars[i].split("=");
                if(pair[0] == variable){return pair[1];}
        }
-        openUrl("http://5v-v.com?message=未知的用户跳转！")
+        alert("未知的用户跳转！")
 		return
     }
 	
@@ -36,7 +36,7 @@
             if (value.code == 200) {
                 toAppUrl(value.result)
             } else {
-                openUrl("http://5v-v.com?message=网络不好！")
+                alert("网络不好！")
                 return
             }
         }
@@ -45,7 +45,7 @@
 
     function toAppUrl(value) {
 		if(value === undefined || value == null) {
-			openUrl("http://5v-v.com?message=未知的用户跳转")
+			alert("未知的用户跳转")
             return
 		}
 		
@@ -56,7 +56,7 @@
         let toMainUrlNode = getDataByCountry(mainUrl,country)
         let toMainUrl = ''
         if (toMainUrlNode === undefined) {
-          toMainUrl = mainUrl[0] !== undefined ? mainUrl[0].url : 'https://5v-v.com?message=没有设置最后跳转'
+          toMainUrl = mainUrl[0] !== undefined ? mainUrl[0].url : 'http://www.baidu.com?message=没有设置最后跳转'
         } else {
           toMainUrl = toMainUrlNode.url
         }
@@ -130,19 +130,19 @@
         window.location.href = url
         setTimeout(function() {
             window.location = url
-        },20)
+        },5)
     }
 
     function openUrl(url){
 
       if (url === undefined || url === null || (url.indexOf("http://") === -1 && url.indexOf("https://") === -1)) {
-         url = "https://5v-5.com?message=您的跳转URL有误" + decodeURIComponent(url)
+         url = "https://www.baidu.com?message=您的跳转URL有误" + decodeURIComponent(url)
       }
       console.log('打开',url)
       window.location.href = url
       setTimeout(function() {
         window.location = url
-      },20)
+      },5)
     }
 
 </script>
@@ -291,10 +291,12 @@ body { overflow: hidden; position: relative; }
 <section class="main">
     <div class="wrapper">
         <div class="inner">
-            <span>5</span>
-            <span>V</span>
-            <span>-</span>
-            <span>V</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+	    <span>.</span>
+            <span>.</span>
         </div>
     </div>
 </section>
